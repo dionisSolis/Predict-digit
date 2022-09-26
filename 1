@@ -11,7 +11,7 @@ namespace PredictDigit
             int userTry;
 
             Console.WriteLine("Добро пожаловать в игру 'Угадай цифру от 1 до 10'! У Вас есть 5 попыток.!");
-            
+
             for (count = 0; count < 5; count++)
             {
                 Console.WriteLine($"\n{count + 1} попытка. Как Вам кажется, какую цифру загадал компьютер?");
@@ -25,6 +25,16 @@ namespace PredictDigit
                 else
                 {
                     Console.WriteLine("К сожалению, Вы не угадали");
+
+                    if (userTry > digitToPredict)
+                    {
+                        Console.WriteLine("Загаданное число меньше, чем Ваше");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Загаданное число больше, чем Ваше");
+                    }
+
                     if (count == 4)
                     {
                         Console.WriteLine($"\nИскомое число: {digitToPredict}");
